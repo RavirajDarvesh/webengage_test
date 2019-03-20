@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5GQRCDV');</script>
+<!-- End Google Tag Manager -->
+  <title>Parcel Sandbox</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GQRCDV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" class="form-control" placeholder="First Name" />
+      </div>
+      <div class="form-group">
+        <label for="fname">Last Name</label>
+        <input type="text" id="lname" class="form-control" placeholder="Last Name" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Enter email" />
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Phone</label>
+        <input type="text" class="form-control" id="phone" placeholder="Phone" />
+      </div>
+      <div class="form-check d-inline">
+        <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male" checked />
+        <label class="form-check-label" for="exampleRadios1"> Male </label>
+      </div>
+      <div class="form-check d-inline">
+        <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Female" />
+        <label class="form-check-label" for="exampleRadios2"> Female </label>
+      </div>
+      <div class="m-2">
+        <label>Birthdate</label> <input id="bd" type="date" />
+      </div>
+      <button type="submit" class="btn btn-primary m-auto d-block" id="login">
+        Submit
+      </button>
+      <ul class="list-group m-4">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Cras justo odio
+          <span class="badge badge-primary badge-pill">14</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Dapibus ac facilisis in
+          <span class="badge badge-primary badge-pill">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Morbi leo risus
+          <span class="badge badge-primary badge-pill">1</span>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <!-- <script src="./src/index.js"></script> -->
+
+  <script>
+    $(document).ready(function () {
+      $("#login").click(function (e) {
+        e.preventDefault();
+
+        const email = $("#Email1").val();
+        const fname = $("#fname").val();
+        const lname = $("#lname").val();
+        const bd = $("#bd").val();
+        const gender = $("input[name=gender]:checked").val();
+        const phone = $("#phone").val();
+        console.log(email, fname, lname, bd, gender, phone);
+        // alert("submit success");
+        $("form")[0].reset();
+        webengage.user.login(email);
+        webengage.user.setAttribute({
+          we_first_name: fname,
+          we_last_name: lname,
+          we_email: email,
+          we_gender: gender,
+          Birthdate: bd,
+          phone: phone,
+          payload: [{
+              item: 1,
+              notification: "14"
+            },
+            {
+              item: 2,
+              notification: "2"
+            }
+          ]
+        });
+        webengage.track("form submitted", {
+          we_first_name: fname,
+          we_last_name: lname,
+          we_email: email,
+          we_gender: gender,
+          Birthdate: bd,
+          phone: phone,
+          payload: [{
+              item: 1,
+              notification: "14"
+            },
+            {
+              item: 2,
+              notification: "2"
+            }
+          ]
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
