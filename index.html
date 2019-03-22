@@ -130,9 +130,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
         });
 
-          webengage.survey.options({
-            'scope' : '_USER_SESSION_ID_',
-            'scopeType' : 'session'
+                  webengage.survey.options({
+            'surveyId' : '37hd6co', // survey id to be rendered ... note : it is optional
+            'defaultRender' : false
+          });
+          webengage.onReady(function(){
+            document.getElementById("login").onclick = function () {
+              webengage.survey.render();
+            };
           });
             
       });
