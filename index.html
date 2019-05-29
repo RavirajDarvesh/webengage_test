@@ -3,22 +3,33 @@
 
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5GQRCDV');</script>
-<!-- End Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5GQRCDV');
+  </script>
+  <!-- End Google Tag Manager -->
   <title>Parcel Sandbox</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <style>
-    .container:hover{
-      box-shadow: 0 5px 5px -3px rgba(0,0,0,0.2), 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12);
+    .container:hover {
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
     }
   </style>
 </head>
@@ -26,9 +37,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body>
 
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GQRCDV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GQRCDV" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <div class="container">
     <form class="p-4 m-4">
       <div class="form-group">
@@ -113,17 +124,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
           ]
         });
-        var myArray = [246,242,132,158,171,122,243,145,148,123,147,213,256,172,184,187,249,173,254,236,233,130,174,264,247,183,259,127,149,185,258,154,129,240,134,239,241,270]
-var value = myArray[Math.floor(Math.random() * myArray.length)]
-        webengage.track("form submitted", { 
+
+        webengage.track("form submitted", {
           we_first_name: fname,
           we_last_name: lname,
           we_email: email,
           we_gender: gender,
           Birthdate: bd,
           phone: phone,
-          "content-id" : value,
-          payload: [{ 
+          "content-id": value,
+          payload: [{
               item: 1,
               notification: "14"
             },
@@ -132,26 +142,23 @@ var value = myArray[Math.floor(Math.random() * myArray.length)]
               notification: "2"
             }
           ]
-  
+
         });
 
-          //         webengage.survey.options({
-          //   'surveyId' : '37hd6co', // survey id to be rendered ... note : it is optional
-          //   'defaultRender' : false
-          // });
-          // webengage.onReady(function(){
-          //   document.getElementById("login").onclick = function () {
-          //     webengage.survey.render();
-          //   };
-          // });
+        webengage.screen('Dassler Premium Ice-cream', {
+          'currentProductId': '2947APW09',
+          'price': 210,
+          'isDiscounted': false
+        });
 
 
-          
-            
+
+
+
       });
     });
   </script>
   <script src="./main.js" />
-</body>
+  </body>
 
 </html>
