@@ -53,7 +53,8 @@
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Enter email" />
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else. <a href="#"
+            id="policy">(Privacy Policy)</a></small>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Phone</label>
@@ -103,18 +104,19 @@
         const bd = $("#bd").val();
         const gender = $("input[name=gender]:checked").val();
         const phone = $("#phone").val();
+
         console.log(email, fname, lname, bd, gender, phone);
         // alert("submit success");
         $("form")[0].reset();
         webengage.user.login(email);
         webengage.user.setAttribute({
-          we_first_name: fname,
-          we_last_name: lname,
-          we_email: email,
-          we_gender: gender,
-          Birthdate: bd,
-          phone: phone,
-          payload: [{
+          "we_first_name": fname,
+          "we_last_name": lname,
+          "we_email": email,
+          "we_gender": gender,
+          "Birthdate": bd,
+          "phone": phone,
+          "payload": [{
               item: 1,
               notification: "14"
             },
@@ -126,14 +128,14 @@
         });
 
         webengage.track("form submitted", {
-          we_first_name: fname,
-          we_last_name: lname,
-          we_email: email,
-          we_gender: gender,
-          Birthdate: bd,
-          phone: phone,
-          content_id: value,
-          payload: [{
+          "userId": email,
+          "we_first_name": fname,
+          "we_last_name": lname,
+          "we_email": email,
+          "we_gender": gender,
+          "Birthdate": bd,
+          "phone": phone,
+          "payload": [{
               item: 1,
               notification: "14"
             },
@@ -147,11 +149,12 @@
 
       });
 
-      webengage.screen('Dassler Premium Ice-cream', {
-          'currentProductId': '2947APW09',
-          'price': 210,
-          'isDiscounted': false
-        });
+      $('#policy').click(function () {
+        webengage.track("open_Survey",{
+          "userId": email,
+          "link_clicked": "policy_link"
+        })
+      });
 
     });
   </script>
