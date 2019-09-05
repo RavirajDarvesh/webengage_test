@@ -104,8 +104,9 @@
         const bd = $("#bd").val();
         const gender = $("input[name=gender]:checked").val();
         const phone = $("#phone").val();
+        const billedAmount = Math.floor((Math.random() * 1000) + 1);
 
-        console.log(email, fname, lname, bd, gender, phone);
+        console.log(email, fname, lname, bd, gender, phone, billedAmount);
         // alert("submit success");
         $("form")[0].reset();
         webengage.user.login(email);
@@ -135,6 +136,7 @@
           "we_gender": gender,
           "Birthdate": bd,
           "phone": phone,
+          "billedAmount": billedAmount,
           "payload": [{
               item: 1,
               notification: "14"
