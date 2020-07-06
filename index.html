@@ -3,27 +3,117 @@
 
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5GQRCDV');</script>
-<!-- End Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5GQRCDV');
+  </script>
+  <!-- End Google Tag Manager -->
   <title>Parcel Sandbox</title>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./service-worker.js"></script>
+  <style>
+    .form:hover {
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    a {
+      color: black;
+    }
+    #banner{
+      transition: background ease .3s;
+      border-radius: 5px;
+    }
+    .banner_text{
+      color: #ffffff;
+    }
+    .active{
+      background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hover_shadow{
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    .custom_button {
+      border: 1px solid #836FF3;
+      color: #836FF3;
+      background: #ffffff;
+      padding: 10px 30px;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+
+    .custom_button:hover {
+      background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
-<body>
+<body
+  style="background: url('./Assets/banner.jpeg');background-attachment: fixed;background-size: cover;">
 
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GQRCDV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <div class="container">
-    <form>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GQRCDV" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!--  -->
+  <nav style="background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);" class="site-header sticky-top py-1">
+    <div style="color: #512067;" class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2" href="#" aria-label="Product">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img"
+          viewBox="0 0 24 24" focusable="false">
+          <title>Product</title>
+          <circle cx="12" cy="12" r="10" />
+          <path
+            d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+        </svg>
+      </a>
+      <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
+      <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
+      <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
+      <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
+      <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
+      <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
+      <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+    </div>
+  </nav>
+
+  <div  class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+    <div id="banner" class="col-md-5 p-5 mx-auto my-5">
+      <h1 class="display-4 banner_text font-weight-normal">Punny headline</h1>
+      <p class="lead font-weight-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat cumque ducimus ex eius nam magni quae quas velit.</p>
+      <a class="custom_button" id="banner_button" href="#">Coming soon</a>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
+
+  <!--  -->
+
+  <div id="myForm" style="background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);" class="col-md-6 col-11 form mx-auto">
+    <form class="p-4">
       <div class="form-group">
         <label for="fname">First Name</label>
         <input type="text" id="fname" class="form-control" placeholder="First Name" />
@@ -35,7 +125,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Enter email" />
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else. <a href="#"
+            id="policy">(Privacy Policy)</a></small>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Phone</label>
@@ -52,7 +143,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="m-2">
         <label>Birthdate</label> <input id="bd" type="date" />
       </div>
-      <button type="submit" class="btn btn-primary m-auto d-block" id="login">
+      <button type="submit" class="m-auto d-block custom_button" id="login">
         Submit
       </button>
       <ul class="list-group m-4">
@@ -72,10 +163,78 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </form>
   </div>
 
+  <div style="height: 50px;"></div>
+
+  <footer id="myFooter" style="background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);" class="container-fluid py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+          viewBox="0 0 24 24" focusable="false">
+          <title>Product</title>
+          <circle cx="12" cy="12" r="10" />
+          <path
+            d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+        </svg>
+        <small class="d-block mb-3 text-muted">&copy; 2017-2019</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Cool stuff</a></li>
+          <li><a class="text-muted" href="#">Random feature</a></li>
+          <li><a class="text-muted" href="#">Team feature</a></li>
+          <li><a class="text-muted" href="#">Stuff for developers</a></li>
+          <li><a class="text-muted" href="#">Another one</a></li>
+          <li><a class="text-muted" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Resource</a></li>
+          <li><a class="text-muted" href="#">Resource name</a></li>
+          <li><a class="text-muted" href="#">Another resource</a></li>
+          <li><a class="text-muted" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Business</a></li>
+          <li><a class="text-muted" href="#">Education</a></li>
+          <li><a class="text-muted" href="#">Government</a></li>
+          <li><a class="text-muted" href="#">Gaming</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Team</a></li>
+          <li><a class="text-muted" href="#">Locations</a></li>
+          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
   <!-- <script src="./src/index.js"></script> -->
 
   <script>
     $(document).ready(function () {
+      $('#banner_button').hover(function(){
+        $('#banner').css('background','white');
+        $('.banner_text').addClass('active');
+        $('#banner').css('box-shadow','0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12)');
+      },
+      function(){
+        $('#banner').css('background','transparent');
+        $('.banner_text').removeClass('active');
+        $('#banner').css('box-shadow','unset');
+      }
+      );
       $("#login").click(function (e) {
         e.preventDefault();
 
@@ -85,47 +244,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const bd = $("#bd").val();
         const gender = $("input[name=gender]:checked").val();
         const phone = $("#phone").val();
-        console.log(email, fname, lname, bd, gender, phone);
+        const billedAmount = Math.floor((Math.random() * 1000) + 1);
+
+        console.log(email, fname, lname, bd, gender, phone, billedAmount);
         // alert("submit success");
         $("form")[0].reset();
         webengage.user.login(email);
         webengage.user.setAttribute({
-          we_first_name: fname,
-          we_last_name: lname,
-          we_email: email,
-          we_gender: gender,
-          Birthdate: bd,
-          phone: phone,
-          payload: [{
-              item: 1,
-              notification: "14"
-            },
-            {
-              item: 2,
-              notification: "2"
-            }
+          "we_first_name": fname,
+          "we_last_name": lname,
+          "we_email": email,
+          "we_gender": gender,
+          "Birthdate": bd,
+          "phone": phone,
+          "payload": [{
+            item: 1,
+            notification: "14"
+          },
+          {
+            item: 2,
+            notification: "2"
+          }
           ]
         });
+
         webengage.track("form submitted", {
-          we_first_name: fname,
-          we_last_name: lname,
-          we_email: email,
-          we_gender: gender,
-          Birthdate: bd,
-          phone: phone,
-          payload: [{
-              item: 1,
-              notification: "14"
-            },
-            {
-              item: 2,
-              notification: "2"
-            }
+          "userId": email,
+          "we_first_name": fname,
+          "we_last_name": lname,
+          "we_email": email,
+          "we_gender": gender,
+          "Birthdate": bd,
+          "phone": phone,
+          "billedAmount": billedAmount,
+          "payload": [{
+            item: 1,
+            notification: "14"
+          },
+          {
+            item: 2,
+            notification: "2"
+          }
           ]
+
         });
+
       });
+
+      $('#policy').click(function () {
+        webengage.track("open_Survey", {
+          "link_clicked": "policy_link"
+        })
+      });
+
     });
   </script>
-</body>
+  <script src="./main.js" />
+  </body>
 
 </html>
