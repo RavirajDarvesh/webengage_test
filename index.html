@@ -20,6 +20,15 @@
     })(window, document, 'script', 'dataLayer', 'GTM-5GQRCDV');
   </script>
   <!-- End Google Tag Manager -->
+
+  <!-- Segment integration -->
+  <!-- <script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+    analytics.load("wqZQbo6AUzDZQFnvHmj0Xs22JzbHYl3x");
+    analytics.page();
+    }}();
+  </script> -->
+  <!-- Segment integration end -->
   <title>Parcel Sandbox</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +36,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="./service-worker.js"></script>
   <style>
     .form:hover {
       box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
@@ -36,19 +44,23 @@
     a {
       color: black;
     }
-    #banner{
+
+    #banner {
       transition: background ease .3s;
       border-radius: 5px;
     }
-    .banner_text{
+
+    .banner_text {
       color: #ffffff;
     }
-    .active{
+
+    .active {
       background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hover_shadow{
+
+    .hover_shadow {
       box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
     }
 
@@ -69,8 +81,7 @@
   </style>
 </head>
 
-<body
-  style="background: url('./Assets/banner.jpeg');background-attachment: fixed;background-size: cover;">
+<body style="background: url('./Assets/banner.jpeg');background-attachment: fixed;background-size: cover;">
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GQRCDV" height="0" width="0"
@@ -100,10 +111,11 @@
     </div>
   </nav>
 
-  <div  class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
     <div id="banner" class="col-md-5 p-5 mx-auto my-5">
       <h1 class="display-4 banner_text font-weight-normal">Punny headline</h1>
-      <p class="lead font-weight-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat cumque ducimus ex eius nam magni quae quas velit.</p>
+      <p class="lead font-weight-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat cumque ducimus
+        ex eius nam magni quae quas velit.</p>
       <a class="custom_button" id="banner_button" href="#">Coming soon</a>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
@@ -112,7 +124,8 @@
 
   <!--  -->
 
-  <div id="myForm" style="background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);" class="col-md-6 col-11 form mx-auto">
+  <div id="myForm" style="background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);"
+    class="col-md-6 col-11 form mx-auto">
     <form class="p-4">
       <div class="form-group">
         <label for="fname">First Name</label>
@@ -165,7 +178,8 @@
 
   <div style="height: 50px;"></div>
 
-  <footer id="myFooter" style="background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);" class="container-fluid py-5">
+  <footer id="myFooter" style="background: linear-gradient(to right, #8767f5 0%, #40e5ce 100%);"
+    class="container-fluid py-5">
     <div class="row">
       <div class="col-12 col-md">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
@@ -223,17 +237,22 @@
   <!-- <script src="./src/index.js"></script> -->
 
   <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./service-worker.js');
+      });
+    }
     $(document).ready(function () {
-      $('#banner_button').hover(function(){
-        $('#banner').css('background','white');
+      $('#banner_button').hover(function () {
+        $('#banner').css('background', 'white');
         $('.banner_text').addClass('active');
-        $('#banner').css('box-shadow','0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12)');
+        $('#banner').css('box-shadow', '0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12)');
       },
-      function(){
-        $('#banner').css('background','transparent');
-        $('.banner_text').removeClass('active');
-        $('#banner').css('box-shadow','unset');
-      }
+        function () {
+          $('#banner').css('background', 'transparent');
+          $('.banner_text').removeClass('active');
+          $('#banner').css('box-shadow', 'unset');
+        }
       );
       $("#login").click(function (e) {
         e.preventDefault();
@@ -299,7 +318,7 @@
 
     });
   </script>
-  <script src="./main.js" />
-  </body>
+  <!-- <script src="./main.js" /> -->
+</body>
 
 </html>
